@@ -23,8 +23,7 @@
       "remoteRoot": "/home/node",
       "skipFiles": [
         "<node_internals>/**"
-      ],
-      "restart": true
+      ]
     }
   ]
 }
