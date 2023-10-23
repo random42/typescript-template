@@ -1,7 +1,5 @@
 *
 !src/
 !test/
-!scripts/
-!examples/
 !package*.json
-!tsconfig.json
+!tsconfig*.json
