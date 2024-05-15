@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node dist/main.js",
-    "dev": "node --watch --inspect --require ts-node/register -- src/main.ts",
+    "dev": "node --watch --inspect --loader ts-node/esm -- src/main.ts | pino-pretty",
     "prebuild": "rimraf dist",
     "build": "tsc",
     "git": "husky",
@@ -12,7 +12,7 @@
     "format:fix": "prettier --write '{src,test}/**/*.ts'",
     "lint": "eslint --ext ts '{src,test}/**'",
     "lint:fix": "eslint --fix --ext ts '{src,test}/**'",
-    "test": "node --test --require ts-node/register -- ./test/*.test.ts"
+    "test": "node --test --loader ts-node/esm -- ./test/*.test.ts"
   },
   "dependencies": {
     "lodash": "^4.17.21"
@@ -36,13 +36,19 @@
     "node": "^20",
     "npm": "^10"
   },
+  "type": "module",
   "description": "",
   "author": "Roberto Sero",
-  "main": "dist/index.js",
+  "exports": {
+    "default": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
   "bin": "./bin",
-  "types": "dist/index.d.ts",
   "files": [
     "dist/**"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "volta": {
+    "node": "20.13.1"
+  }
 }
