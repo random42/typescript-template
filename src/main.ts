@@ -1,5 +1,9 @@
+import { getLogger } from './log.js';
+
+const log = getLogger('main');
+
 async function main() {
-  console.log('Hello world!');
+  log.info('Hello world!');
 }
 
 main().catch(console.error);
