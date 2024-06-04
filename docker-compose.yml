@@ -1,6 +1,18 @@
 version: '3.9'
 services:
-  db:
+  app:
+    image: my-image-name
+    build:
+      context: .
+      target: build
+    command: npm run dev
+    volumes:
+      - ./src:/app/src:ro
+    depends_on: 
+      - db
+    environment: 
+      NODE_ENV: development
+  db: 
     image: postgres:16
     ports:
       - 5432:5432
