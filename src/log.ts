@@ -1,9 +1,10 @@
 import { pino } from 'pino';
+import { env } from './env.js';
 
 export const getLogger = (name: string) =>
   pino({
     name,
-    level: process.env?.LOG_LEVEL ?? 'info',
+    level: env.LOG_LEVEL,
     base: null,
     nestedKey: 'data',
   });
