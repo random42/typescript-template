@@ -1,5 +1,5 @@
-import * as dotenv from 'dotenv';
-import { cleanEnv, str, num } from 'envalid';
+import * as dotenv from '@dotenvx/dotenvx';
+import { cleanEnv, num, str } from 'envalid';
 
 dotenv.config();
 export const env = cleanEnv(process.env, {

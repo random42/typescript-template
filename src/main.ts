@@ -1,5 +1,5 @@
-import { getLogger } from './log.js';
 import { env } from './env.js';
+import { getLogger } from './log.js';
 
 const log = getLogger('main');
 
