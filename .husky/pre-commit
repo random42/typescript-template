@@ -1,2 +1,2 @@
-npm run check
+npm run check --staged
 npm test
